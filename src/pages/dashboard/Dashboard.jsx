@@ -8,6 +8,8 @@ import User from "./User";
 import Tasks from "./Tasks";
 import Cms from "./Cms";
 import LiveChat from "./LiveChat";
+import TableDashbooard from "../../components/ui/tableDashbooard/tableDashbooard";
+import FormDashboard from "../../components/ui/formDashboard/FormDashboard";
 
 // import User from "./User";
 function Dashboard() {
@@ -21,12 +23,15 @@ function Dashboard() {
 
         <main className="flex-grow-1">
           <Routes>
-            <Route path="/" element={ <StatusPage /> } />
-            <Route path="/projects" element={ <Projects /> } />
-            <Route path="/user" element={<User />} />
-            <Route path="/tasks" element={<Tasks />} />
-            <Route path="/cms" element={<Cms />} />
-            <Route path="/livechat" element={<LiveChat />} />
+            <Route path="/"         element={ <StatusPage /> } />
+            <Route path="/projects" element={ <Projects   /> } />
+            <Route path="/user"     element={ <User       /> } >
+              <Route index          element={ <TableDashbooard /> } />
+              <Route path="add"     element={ <FormDashboard   /> } />
+            </Route>
+            <Route path="/tasks"    element={ <Tasks      /> } />
+            <Route path="/cms"      element={ <Cms        /> } />
+            <Route path="/livechat" element={ <LiveChat   /> } />
           </Routes>
         </main>
         

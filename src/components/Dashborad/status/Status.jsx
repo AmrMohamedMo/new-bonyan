@@ -1,32 +1,47 @@
+import CardStatus from "../../ui/cardStatus/CardStatus"
+import styles from './Status.module.css';
+const description = [
+  {
+    counter: 120,
+    title: "Projects",
+    icon: "fa-brands fa-atlassian"
+  },
+  {
+    counter: 110,
+    title: "Users",
+    icon: "fa-solid fa-users"
+  },
+  {
+    counter: 220,
+    title: "Developers",
+    icon: "fa-brands fa-github-alt"
+  },
+  {
+    counter: 30,
+    title: "Blogs",
+    icon: "fa-brands fa-blogger"
+  },
+];
 
 const Status = () => {
   return (
-    <section className="container">
+    <section className="container my-5">
       <div className="row">
-        
-        <div className="col-12 col-md-3 ">
-          
-          <div className="cardStatus bg-danger">
-            
-            <div className="icon">
-              <i className="fa-solid fa-triangle-exclamation"></i>
-            </div>
 
-            <div className="info">
-              <span className="counter">10</span>
-              <span className="title">Pending Tasks</span>
-            </div>
-
+        { description.map( ( e ) => (
+          <div className="col-12 col-md-3 ">
+            <CardStatus counter={ e.counter } title={ e.title } icon={ e.icon } />
           </div>
+        ) ) }
 
-        </div>
 
-        <div className="col-12 col-md-3 ">test</div>
-        <div className="col-12 col-md-3 ">test</div>
-        <div className="col-12 col-md-3 ">test</div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Status
+
+
+
+
