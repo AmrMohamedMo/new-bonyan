@@ -1,11 +1,12 @@
+import { Outlet } from "react-router-dom";
 
 
 const Projects = () => {
   return (
-    <div>
-      Projectssssssssssssssssssss
-    </div>
-  )
-}
+    <section className="py-4">
+      <Outlet />
+    </section>
+  );
+};
 
-export default Projects
+export default Projects;

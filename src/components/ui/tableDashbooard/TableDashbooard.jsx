@@ -1,13 +1,28 @@
 import { Link } from "react-router-dom";
 
+const TableDashbooard = ( { selectedMenu } ) => {
+  const titleMap = {
+    user: "Users",
+    projects: "Projects",
+    developer: "Developers",
+    cms: "CMS",
+    livechat: "Live Chat",
+    "/": "Status",
+  };
 
-const TableDashbooard = () => {
+  const title = titleMap[ selectedMenu ] || "Users";
+
   return (
     <div className="container">
+
       <div className="header d-flex justify-content-between mb-3">
-        <h3>Users</h3>
-        <Link to={ `add` } className={ ` btn btn-primary` }>Add User</Link>
+
+        <h3>{ title }</h3>
+
+        <Link to={ `add` } className={ `btn btn-primary` }>Add { title }</Link>
+
       </div>
+
       <table className="table">
         <thead>
           <tr>
@@ -38,6 +53,7 @@ const TableDashbooard = () => {
           </tr>
         </tbody>
       </table>
+
     </div>
   );
 };
